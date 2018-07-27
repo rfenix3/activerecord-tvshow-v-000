@@ -9,6 +9,7 @@ class Show < ActiveRecord::Base
   
   
   def self.highest_rating
+<<<<<<< HEAD
     Show.maximum(:rating)    
   end
 
@@ -36,4 +37,20 @@ class Show < ActiveRecord::Base
     Show.all.order(:name)
   end
 
+=======
+    self.maximum(:rating)    
+  end
+
+  def self.most_popular_show
+    binding.pry
+    self.where("rating = ?", self.highest_rating)
+  end
+
+  def self.most_popular_show
+    self.maximum(:rating)    
+  end
+
+
+  
+>>>>>>> 9b33d7eabe244b2017811810082a69f627ddee6a
 end
